@@ -14,7 +14,7 @@ BEGIN { use_ok('Text::Median') };
 # Insert your test code below, the Test::More module is use()ed here so read
 # its man page ( perldoc Test::More ) for help writing this test script.
 
-
+my $obj;
 warning_like { $obj = new Text::Median } {carped => qr/Both a module and a method are required./ }, 'new without arguments caught';
 
 warning_like { $obj = new Text::Median(module=>"Non;Existent_Module",method=>"foo") } {carped => qr/not a valid module name/}, 'invalid module name caught';
